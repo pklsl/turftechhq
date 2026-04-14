@@ -28,7 +28,6 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
-const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
 ---
 
 <BaseLayout title={article.data.title} description={article.data.description}>
@@ -67,7 +66,6 @@ const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
             <Content />
           </div>
           <EmailCapture
-            convertKitFormId={ckFormId}
             siteId="turftechhq"
             placementType="inline"
             leadMagnetLabel="Seasonal Lawn Care Checklist"
@@ -82,7 +80,6 @@ const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
             <AdSlot slot="article-in-content-2" format="horizontal" lazy={true} minHeight="90px" />
           </div>
           <EmailCapture
-            convertKitFormId={ckFormId}
             siteId="turftechhq"
             placementType="cta"
             leadMagnetLabel="Seasonal Lawn Care Checklist"
@@ -111,7 +108,6 @@ const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
     </div>
   </article>
   <EmailCapture
-    convertKitFormId={ckFormId}
     siteId="turftechhq"
     placementType="exit-intent"
     leadMagnetLabel="Seasonal Lawn Care Checklist"

@@ -8,15 +8,14 @@ interface Props {
 }
 
 const {
-  heading = 'Get Your Free Seasonal Lawn Care Checklist',
+  heading = 'Get Your Free Lawn Care Guide',
   description = 'Join thousands of homeowners and landscapers. Get expert lawn care guides, seasonal tips, and garden solutions delivered to your inbox.',
-  ctaText = 'Get the Free Checklist',
-  leadMagnet = 'Seasonal Lawn Care Checklist',
+  ctaText = 'Get the Free Guide',
+  leadMagnet = 'Lawn Care Maintenance Guide',
   variant = 'full',
 } = Astro.props;
 
-const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || '';
-const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
+const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || 'kit_c9479f8706aba6b9e2e8a9d2ef9407d0';
 const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
@@ -86,7 +85,7 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
   </div>
 )}
 
-<script define:vars={{ uid, ckApiKey, ckFormId }}>
+<script define:vars={{ uid, ckApiKey }}>
   (function () {
     var form = document.getElementById(uid);
     if (!form) return;
@@ -100,8 +99,7 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
       var email = emailInput ? emailInput.value.trim() : '';
       if (!email) return;
 
-      if (!ckFormId || !ckApiKey) {
-        console.warn('[EmailSignup] ConvertKit not configured.');
+      if (!ckApiKey) {
         actualForm.innerHTML = '<p class="text-sm text-center py-4">Email capture is not yet configured. Please check back soon!</p>';
         return;
       }
@@ -110,18 +108,18 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
       var origText = btn.textContent;
       btn.textContent = 'Subscribing...';
 
-      fetch('https://api.convertkit.com/v3/forms/' + ckFormId + '/subscribe', {
+      fetch('https://api.kit.com/v4/subscribers', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: ckApiKey, email: email }),
+        headers: { 'Content-Type': 'application/json', 'X-Kit-Api-Key': ckApiKey },
+        body: JSON.stringify({ email_address: email }),
       })
         .then(function (res) { return res.json(); })
         .then(function (data) {
-          if (data.subscription) {
+          if (data.subscriber) {
             actualForm.innerHTML =
               '<div class="text-center">' +
-              '<p class="text-lg font-semibold mb-2">Check your inbox!</p>' +
-              '<p class="text-sm">We sent you a confirmation email. Click the link inside to confirm.</p>' +
+              '<p class="text-lg font-semibold mb-2">You\'re subscribed!</p>' +
+              '<p class="text-sm">Thanks for signing up. We\'ll send you the best tips and guides.</p>' +
               '</div>';
           } else {
             btn.disabled = false;
