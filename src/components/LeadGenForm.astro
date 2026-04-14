@@ -1,0 +1,208 @@
+---
+interface Props {
+  siteId: string;
+  serviceTypes: string[];
+  heading?: string;
+  subheading?: string;
+  variant?: 'inline' | 'page';
+}
+
+const {
+  siteId,
+  serviceTypes,
+  heading = 'Get a Free Estimate',
+  subheading = 'Connect with a local landscaping professional — no obligation.',
+  variant = 'inline',
+} = Astro.props;
+
+const LEAD_API = 'https://awxdt6ucqtcloxsrc3nod5vcse0rtgxt.lambda-url.us-east-1.on.aws/';
+const uid = `lgf-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+{variant === 'inline' ? (
+  <div class="lead-gen-form my-8 bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8" id={uid} data-site={siteId} data-api={LEAD_API}>
+    <h2 class="text-xl md:text-2xl font-bold font-heading text-text mb-1">{heading}</h2>
+    <p class="text-text-muted text-sm mb-6">{subheading}</p>
+    <form class="lgf-form space-y-4">
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-fname`}>First Name *</label>
+          <input id={`${uid}-fname`} type="text" name="firstName" required placeholder="Jane"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-lname`}>Last Name *</label>
+          <input id={`${uid}-lname`} type="text" name="lastName" required placeholder="Smith"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-phone`}>Phone *</label>
+          <input id={`${uid}-phone`} type="tel" name="phone" required placeholder="(555) 000-0000"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-zip`}>Zip Code *</label>
+          <input id={`${uid}-zip`} type="text" name="zip" required placeholder="90210" maxlength="10"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-email`}>Email Address *</label>
+        <input id={`${uid}-email`} type="email" name="email" required placeholder="jane@example.com"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white" />
+      </div>
+      <div>
+        <label class="block text-xs font-medium text-text-muted mb-1" for={`${uid}-service`}>Service Needed *</label>
+        <select id={`${uid}-service`} name="serviceType" required
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm bg-white">
+          <option value="">Select a service…</option>
+          {serviceTypes.map((s) => <option value={s}>{s}</option>)}
+        </select>
+      </div>
+      <div class="flex items-start gap-2">
+        <input id={`${uid}-consent`} type="checkbox" name="consent" required
+          class="mt-0.5 w-4 h-4 accent-primary flex-shrink-0" />
+        <label for={`${uid}-consent`} class="text-xs text-text-muted leading-relaxed">
+          I agree to be contacted by a local professional regarding my service request. By submitting this form I consent to the collection and use of my information per the <a href="/privacy-policy" class="underline text-primary">Privacy Policy</a>. (GDPR/CCPA compliant.)
+        </label>
+      </div>
+      <button type="submit" class="lgf-submit w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg transition-colors duration-200 text-sm">
+        Get My Free Estimate
+      </button>
+      <p class="lgf-error hidden text-xs text-red-600 text-center"></p>
+    </form>
+    <div class="lgf-success hidden text-center py-6">
+      <div class="text-4xl mb-3">✓</div>
+      <h3 class="text-lg font-bold text-text mb-1">Request Received!</h3>
+      <p class="text-text-muted text-sm">A local professional will be in touch within 1 business day.</p>
+    </div>
+  </div>
+) : (
+  <div class="lead-gen-form bg-white rounded-2xl shadow-lg p-8 md:p-10" id={uid} data-site={siteId} data-api={LEAD_API}>
+    <h1 class="text-2xl md:text-3xl font-bold font-heading text-text mb-2">{heading}</h1>
+    <p class="text-text-muted mb-8">{subheading}</p>
+    <form class="lgf-form space-y-5">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-text mb-1" for={`${uid}-fname`}>First Name *</label>
+          <input id={`${uid}-fname`} type="text" name="firstName" required placeholder="Jane"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-text mb-1" for={`${uid}-lname`}>Last Name *</label>
+          <input id={`${uid}-lname`} type="text" name="lastName" required placeholder="Smith"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-text mb-1" for={`${uid}-phone`}>Phone Number *</label>
+          <input id={`${uid}-phone`} type="tel" name="phone" required placeholder="(555) 000-0000"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-text mb-1" for={`${uid}-zip`}>Zip Code *</label>
+          <input id={`${uid}-zip`} type="text" name="zip" required placeholder="90210" maxlength="10"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-text mb-1" for={`${uid}-email`}>Email Address *</label>
+        <input id={`${uid}-email`} type="email" name="email" required placeholder="jane@example.com"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-text mb-1" for={`${uid}-service`}>Service Needed *</label>
+        <select id={`${uid}-service`} name="serviceType" required
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-gray-50">
+          <option value="">Select a service…</option>
+          {serviceTypes.map((s) => <option value={s}>{s}</option>)}
+        </select>
+      </div>
+      <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+        <input id={`${uid}-consent`} type="checkbox" name="consent" required
+          class="mt-0.5 w-4 h-4 accent-primary flex-shrink-0" />
+        <label for={`${uid}-consent`} class="text-sm text-text-muted leading-relaxed">
+          I agree to be contacted by a local professional regarding my service request. By submitting this form I consent to the collection and use of my information per the <a href="/privacy-policy" class="underline text-primary">Privacy Policy</a>. This form is GDPR and CCPA compliant.
+        </label>
+      </div>
+      <button type="submit" class="lgf-submit w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-lg transition-colors duration-200 text-base">
+        Get My Free Estimate →
+      </button>
+      <p class="lgf-error hidden text-sm text-red-600 text-center"></p>
+    </form>
+    <div class="lgf-success hidden text-center py-10">
+      <div class="text-5xl mb-4">✓</div>
+      <h2 class="text-2xl font-bold text-text mb-2">Request Received!</h2>
+      <p class="text-text-muted">A local professional will be in touch within 1 business day. Check your email for confirmation.</p>
+    </div>
+  </div>
+)}
+
+<script define:vars={{ uid, siteId, apiUrl: LEAD_API }}>
+  (function () {
+    var container = document.getElementById(uid);
+    if (!container) return;
+
+    var form = container.querySelector('.lgf-form');
+    var successDiv = container.querySelector('.lgf-success');
+    var errorP = container.querySelector('.lgf-error');
+    var submitBtn = container.querySelector('.lgf-submit');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (errorP) { errorP.classList.add('hidden'); errorP.textContent = ''; }
+
+      var firstName = form.querySelector('[name="firstName"]').value.trim();
+      var lastName = form.querySelector('[name="lastName"]').value.trim();
+      var phone = form.querySelector('[name="phone"]').value.trim();
+      var email = form.querySelector('[name="email"]').value.trim();
+      var zip = form.querySelector('[name="zip"]').value.trim();
+      var serviceType = form.querySelector('[name="serviceType"]').value;
+      var consent = form.querySelector('[name="consent"]').checked;
+
+      if (!firstName || !lastName || !phone || !email || !zip || !serviceType || !consent) {
+        if (errorP) { errorP.textContent = 'Please fill in all required fields.'; errorP.classList.remove('hidden'); }
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          phone: phone,
+          email: email,
+          zip: zip,
+          serviceType: serviceType,
+          siteId: siteId,
+          consent: consent,
+          sourceUrl: window.location.href,
+        }),
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.success) {
+            form.classList.add('hidden');
+            if (successDiv) successDiv.classList.remove('hidden');
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get My Free Estimate';
+            if (errorP) { errorP.textContent = data.error || 'Something went wrong. Please try again.'; errorP.classList.remove('hidden'); }
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Get My Free Estimate';
+          if (errorP) { errorP.textContent = 'Network error. Please try again.'; errorP.classList.remove('hidden'); }
+        });
+    });
+  })();
+</script>

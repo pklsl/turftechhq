@@ -1,0 +1,45 @@
+---
+import ProductCard from '@/components/ProductCard.astro';
+import { products } from '@/data/affiliate-products';
+import type { Product } from '@/data/affiliate-products';
+
+interface Props {
+  productSlugs?: string[];
+  category?: string;
+  maxItems?: number;
+  title?: string;
+}
+
+const {
+  productSlugs,
+  category,
+  maxItems = 3,
+  title = 'Recommended Products',
+} = Astro.props;
+
+let displayProducts: Product[];
+
+if (productSlugs && productSlugs.length > 0) {
+  displayProducts = productSlugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is Product => p !== undefined)
+    .slice(0, maxItems);
+} else if (category) {
+  displayProducts = products
+    .filter((p) => p.category === category)
+    .slice(0, maxItems);
+} else {
+  displayProducts = products.slice(0, maxItems);
+}
+---
+
+{displayProducts.length > 0 && (
+  <section class="product-recommendations">
+    <h2 class="text-2xl font-bold mb-6 font-heading">{title}</h2>
+    <div class="space-y-4">
+      {displayProducts.map((product) => (
+        <ProductCard product={product} variant="full" />
+      ))}
+    </div>
+  </section>
+)}

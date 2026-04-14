@@ -1,0 +1,16 @@
+---
+import { products, getAffiliateUrl } from '@/data/affiliate-products';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const product = products.find((p) => p.slug === slug);
+
+if (!product) {
+  return Astro.redirect('/articles');
+}
+
+return Astro.redirect(getAffiliateUrl(product.asin), 302);
+---

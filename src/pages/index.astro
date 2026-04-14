@@ -1,0 +1,130 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AdSlot from '@/components/AdSlot.astro';
+import EmailSignup from '@/components/EmailSignup.astro';
+import LeadGenForm from '@/components/LeadGenForm.astro';
+import { getCollection } from 'astro:content';
+
+const LANDSCAPING_SERVICES = [
+  'Lawn Mowing & Maintenance',
+  'Lawn Installation / Seeding',
+  'Landscape Design',
+  'Garden Bed Installation',
+  'Tree & Shrub Trimming',
+  'Irrigation / Sprinkler System',
+  'Sod Installation',
+  'Other Landscaping Service',
+];
+
+const DEFAULT_IMAGE = "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=800";
+const articles = (await getCollection('articles'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const featuredArticle = articles[0];
+---
+
+<BaseLayout title="Home" description="Turf Tech HQ — Your trusted source for expert landscaping tips, lawn care guides, and garden solutions for homeowners and professionals.">
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold font-heading text-text leading-tight mb-6">
+            Expert Landscaping Tips, Lawn Care Guides & Garden Solutions
+          </h1>
+          <p class="text-lg text-text-muted mb-8 leading-relaxed">
+            Professional lawn care advice, landscaping techniques, and garden maintenance guides for homeowners and landscapers. Transform your outdoor space with confidence.
+          </p>
+          <a
+            href="/articles"
+            class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
+          >
+            Browse Articles
+          </a>
+        </div>
+        <div class="relative">
+          <a href={featuredArticle ? `/articles/${featuredArticle.id}` : '/articles'} class="block">
+            <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+              <img
+                src={featuredArticle?.data.image || DEFAULT_IMAGE}
+                alt={featuredArticle?.data.title || 'Landscaping Resource'}
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <AdSlot slot="home-in-content-1" format="horizontal" lazy={true} minHeight="90px" />
+  </div>
+
+  {articles.length > 0 && (
+    <section class="py-16 bg-surface">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold font-heading mb-10">Latest Articles</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {articles.map((article) => (
+            <a
+              href={`/articles/${article.id}`}
+              class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200 flex flex-col"
+            >
+              <div class="aspect-video overflow-hidden bg-gray-100">
+                <img
+                  src={article.data.image || DEFAULT_IMAGE}
+                  alt={article.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                {article.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    {article.data.tags.slice(0, 2).map((tag) => (
+                      <span class="text-xs font-medium bg-primary/10 text-primary px-2.5 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors leading-snug">
+                  {article.data.title}
+                </h3>
+                <p class="text-text-muted text-sm line-clamp-2 mb-4">
+                  {article.data.description}
+                </p>
+                <time class="text-xs text-text-muted" datetime={article.data.pubDate.toISOString()}>
+                  {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <AdSlot slot="home-in-content-2" format="horizontal" lazy={true} minHeight="90px" />
+  </div>
+
+  <section class="py-16 bg-surface">
+    <div class="max-w-2xl mx-auto px-4">
+      <LeadGenForm
+        siteId="turftechhq"
+        serviceTypes={LANDSCAPING_SERVICES}
+        heading="Get a Free Landscaping Estimate"
+        subheading="Tell us about your project and a local landscaping professional will contact you within 1 business day."
+      />
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <EmailSignup />
+    </div>
+  </section>
+</BaseLayout>

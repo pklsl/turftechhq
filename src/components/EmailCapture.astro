@@ -1,0 +1,192 @@
+---
+interface Props {
+  convertKitFormId: string;
+  siteId: string;
+  placementType: 'inline' | 'cta' | 'exit-intent';
+  leadMagnetLabel?: string;
+}
+
+const {
+  convertKitFormId,
+  siteId,
+  placementType,
+  leadMagnetLabel = 'Free Resource',
+} = Astro.props;
+
+const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || '';
+const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
+---
+
+{placementType === 'inline' && (
+  <div class="email-capture-inline my-6 p-4 bg-primary/5 border border-primary/20 rounded-lg" id={uid} data-placement="inline" data-form-id={convertKitFormId} data-api-key={ckApiKey} data-site={siteId}>
+    <p class="text-sm font-semibold text-text mb-2">Get our free {leadMagnetLabel} — delivered to your inbox.</p>
+    <form class="ck-form flex gap-2">
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+        class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm"
+      />
+      <button
+        type="submit"
+        class="bg-primary hover:bg-primary-dark text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm whitespace-nowrap"
+      >
+        Get It Free
+      </button>
+    </form>
+    <p class="text-xs text-text-muted mt-2">No spam. Unsubscribe anytime.</p>
+  </div>
+)}
+
+{placementType === 'cta' && (
+  <div class="email-capture-cta my-12 bg-gradient-to-br from-primary to-primary-dark text-white rounded-xl p-8 md:p-12" id={uid} data-placement="cta" data-form-id={convertKitFormId} data-api-key={ckApiKey} data-site={siteId}>
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3 font-heading">Get Your Free {leadMagnetLabel}</h2>
+      <p class="text-green-100 mb-6">Join thousands of readers. Expert tips and guides delivered to your inbox — no spam, ever.</p>
+      <form class="ck-form space-y-3">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="First name (optional)"
+          class="w-full px-4 py-3 border border-green-400 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none text-gray-900 placeholder-gray-400"
+        />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter your email address"
+          class="w-full px-4 py-3 border border-green-400 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent outline-none text-gray-900 placeholder-gray-500"
+        />
+        <button
+          type="submit"
+          class="w-full bg-accent hover:bg-accent-light text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+        >
+          Get the Free {leadMagnetLabel}
+        </button>
+      </form>
+      <p class="text-xs text-green-200 mt-4">
+        No spam. Unsubscribe anytime. View our <a href="/privacy-policy" class="text-accent hover:text-accent-light underline">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+)}
+
+{placementType === 'exit-intent' && (
+  <div class="email-capture-exit hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" id={uid} data-placement="exit-intent" data-form-id={convertKitFormId} data-api-key={ckApiKey} data-site={siteId}>
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative">
+      <button class="ck-exit-close absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl leading-none">&times;</button>
+      <h2 class="text-2xl font-bold mb-2 font-heading text-text">Wait — Before You Go!</h2>
+      <p class="text-text-muted mb-6">Grab your free {leadMagnetLabel} before you leave. Join thousands of readers who get our best tips.</p>
+      <form class="ck-form space-y-3">
+        <input
+          type="text"
+          name="first_name"
+          placeholder="First name (optional)"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm"
+        />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter your email address"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-sm"
+        />
+        <button
+          type="submit"
+          class="w-full bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+        >
+          Get It Free
+        </button>
+      </form>
+      <p class="text-xs text-text-muted mt-3 text-center">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+)}
+
+<script define:vars={{ uid, ckFormId: convertKitFormId, ckApiKey, placementType }}>
+  (function () {
+    var container = document.getElementById(uid);
+    if (!container) return;
+
+    if (placementType === 'exit-intent') {
+      var shown = sessionStorage.getItem('ck-exit-shown-' + uid);
+      if (!shown) {
+        document.addEventListener('mouseleave', function onLeave(e) {
+          if (e.clientY <= 0) {
+            container.classList.remove('hidden');
+            container.classList.add('flex');
+            sessionStorage.setItem('ck-exit-shown-' + uid, '1');
+            document.removeEventListener('mouseleave', onLeave);
+          }
+        });
+      }
+      var closeBtn = container.querySelector('.ck-exit-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          container.classList.add('hidden');
+          container.classList.remove('flex');
+        });
+      }
+      container.addEventListener('click', function (e) {
+        if (e.target === container) {
+          container.classList.add('hidden');
+          container.classList.remove('flex');
+        }
+      });
+    }
+
+    var form = container.querySelector('.ck-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var emailInput = form.querySelector('input[name="email"]');
+      var firstNameInput = form.querySelector('input[name="first_name"]');
+      var btn = form.querySelector('button[type="submit"]');
+      var email = emailInput ? emailInput.value.trim() : '';
+      var firstName = firstNameInput ? firstNameInput.value.trim() : '';
+
+      if (!email) return;
+
+      if (!ckFormId || !ckApiKey) {
+        console.warn('[EmailCapture] ConvertKit not configured — PUBLIC_CK_API_KEY or form ID missing.');
+        form.innerHTML = '<p class="text-sm text-center text-text-muted py-4">Email capture is not yet configured. Please check back soon!</p>';
+        return;
+      }
+
+      btn.disabled = true;
+      var origText = btn.textContent;
+      btn.textContent = 'Subscribing…';
+
+      var payload = { api_key: ckApiKey, email: email };
+      if (firstName) payload.first_name = firstName;
+
+      fetch('https://api.convertkit.com/v3/forms/' + ckFormId + '/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.subscription) {
+            form.innerHTML =
+              '<div class="text-center py-4">' +
+              '<p class="text-lg font-semibold mb-1">Check your inbox!</p>' +
+              '<p class="text-sm text-text-muted">We sent you a confirmation email. Click the link to confirm your subscription.</p>' +
+              '</div>';
+          } else {
+            btn.disabled = false;
+            btn.textContent = origText;
+            var errMsg = (data.errors && data.errors[0]) || 'Something went wrong. Please try again.';
+            alert(errMsg);
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = origText;
+          alert('Sorry, there was a network error. Please try again.');
+        });
+    });
+  })();
+</script>

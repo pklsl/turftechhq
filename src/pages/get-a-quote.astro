@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LeadGenForm from '@/components/LeadGenForm.astro';
+
+const LANDSCAPING_SERVICES = [
+  'Lawn Mowing & Maintenance',
+  'Lawn Installation / Seeding',
+  'Landscape Design',
+  'Garden Bed Installation',
+  'Tree & Shrub Trimming',
+  'Irrigation / Sprinkler System',
+  'Sod Installation',
+  'Other Landscaping Service',
+];
+---
+
+<BaseLayout
+  title="Get a Free Landscaping Estimate | Turf Tech HQ"
+  description="Request a free estimate from a local landscaping professional. No obligation — we'll match you with a qualified pro in your area."
+>
+  <section class="py-16 md:py-24 bg-surface">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="pt-4">
+          <span class="inline-block bg-primary/10 text-primary text-sm font-semibold px-3 py-1 rounded-full mb-4">Free & No Obligation</span>
+          <h1 class="text-4xl md:text-5xl font-bold font-heading text-text leading-tight mb-6">
+            Get a Free Landscaping Estimate
+          </h1>
+          <p class="text-lg text-text-muted mb-8 leading-relaxed">
+            Tell us about your landscaping project and we'll connect you with a local professional within 1 business day. No hidden fees, no pressure.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-primary font-bold text-lg mt-0.5">✓</span>
+              <div>
+                <p class="font-semibold text-text">Licensed & Insured Pros</p>
+                <p class="text-text-muted text-sm">Every landscaper in our network is licensed, insured, and background-checked.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-primary font-bold text-lg mt-0.5">✓</span>
+              <div>
+                <p class="font-semibold text-text">Fast Response</p>
+                <p class="text-text-muted text-sm">Receive a callback or email within 1 business day of submitting your request.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-primary font-bold text-lg mt-0.5">✓</span>
+              <div>
+                <p class="font-semibold text-text">No Obligation</p>
+                <p class="text-text-muted text-sm">Getting an estimate is free. You decide if and when to move forward.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <LeadGenForm
+            siteId="turftechhq"
+            serviceTypes={LANDSCAPING_SERVICES}
+            heading="Request Your Free Estimate"
+            subheading="Fill out the form below and a local landscaping professional will be in touch shortly."
+            variant="page"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

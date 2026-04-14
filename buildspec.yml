@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo Installing dependencies...
+      - npm ci
+
+  build:
+    commands:
+      - echo Building Astro site...
+      - npm run build
+      - echo Build complete
+
+artifacts:
+  files:
+    - dist/**/*
+    - appspec.yml
+    - scripts/**/*
+  discard-paths: no

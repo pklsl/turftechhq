@@ -1,0 +1,119 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AdSlot from '@/components/AdSlot.astro';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure.astro';
+import EmailCapture from '@/components/EmailCapture.astro';
+import LeadGenForm from '@/components/LeadGenForm.astro';
+import ProductRecommendations from '@/components/ProductRecommendations.astro';
+import { getCollection, render } from 'astro:content';
+
+const LANDSCAPING_SERVICES = [
+  'Lawn Mowing & Maintenance',
+  'Lawn Installation / Seeding',
+  'Landscape Design',
+  'Garden Bed Installation',
+  'Tree & Shrub Trimming',
+  'Irrigation / Sprinkler System',
+  'Sod Installation',
+  'Other Landscaping Service',
+];
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const ckFormId = import.meta.env.PUBLIC_CK_FORM_ID || '';
+---
+
+<BaseLayout title={article.data.title} description={article.data.description}>
+  <article class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-6">
+        <AffiliateDisclosure variant="compact" />
+      </div>
+      <div class="flex flex-col lg:flex-row gap-8">
+        <div class="flex-1 min-w-0">
+          <div class="mb-8">
+            <div class="flex flex-wrap gap-2 mb-3">
+              {article.data.tags.map((tag) => (
+                <span class="text-xs font-medium bg-primary/10 text-primary px-2.5 py-1 rounded-full">{tag}</span>
+              ))}
+            </div>
+            <h1 class="text-4xl font-bold mb-4 font-heading">{article.data.title}</h1>
+            <div class="flex items-center gap-4 text-text-muted text-sm">
+              <span>By {article.data.author}</span>
+              <time datetime={article.data.pubDate.toISOString()}>
+                {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </div>
+          </div>
+          {article.data.image && (
+            <div class="mb-8 rounded-2xl overflow-hidden shadow-sm">
+              <img
+                src={article.data.image}
+                alt={article.data.title}
+                class="w-full aspect-video object-cover"
+                loading="eager"
+              />
+            </div>
+          )}
+          <div class="prose prose-lg max-w-none">
+            <Content />
+          </div>
+          <EmailCapture
+            convertKitFormId={ckFormId}
+            siteId="turftechhq"
+            placementType="inline"
+            leadMagnetLabel="Seasonal Lawn Care Checklist"
+          />
+          <div class="mt-8">
+            <ProductRecommendations maxItems={3} title="Recommended Landscaping Products" />
+          </div>
+          <div class="mt-8">
+            <AdSlot slot="article-in-content-1" format="horizontal" lazy={true} minHeight="90px" />
+          </div>
+          <div class="mt-4">
+            <AdSlot slot="article-in-content-2" format="horizontal" lazy={true} minHeight="90px" />
+          </div>
+          <EmailCapture
+            convertKitFormId={ckFormId}
+            siteId="turftechhq"
+            placementType="cta"
+            leadMagnetLabel="Seasonal Lawn Care Checklist"
+          />
+          <LeadGenForm
+            siteId="turftechhq"
+            serviceTypes={LANDSCAPING_SERVICES}
+            heading="Need a Landscaper? Get a Free Estimate"
+            subheading="Connect with a local landscaping professional — no obligation."
+          />
+          <div class="mt-6">
+            <AffiliateDisclosure variant="full" />
+          </div>
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <a href="/articles" class="text-primary hover:text-primary-dark font-medium">
+              &larr; Back to Articles
+            </a>
+          </div>
+        </div>
+        <aside class="lg:w-72 flex-shrink-0">
+          <div class="lg:sticky lg:top-8">
+            <AdSlot slot="article-sidebar" format="vertical" lazy={true} minHeight="600px" className="mb-6" />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+  <EmailCapture
+    convertKitFormId={ckFormId}
+    siteId="turftechhq"
+    placementType="exit-intent"
+    leadMagnetLabel="Seasonal Lawn Care Checklist"
+  />
+</BaseLayout>

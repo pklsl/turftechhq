@@ -1,0 +1,55 @@
+---
+---
+
+<div id="cookie-consent" class="fixed bottom-0 inset-x-0 z-50 hidden" role="dialog" aria-label="Cookie consent">
+  <div class="bg-surface-dark text-white p-4 shadow-lg border-t border-gray-700">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-1 text-sm text-gray-300">
+        <p>
+          We use cookies to improve your experience, serve relevant ads, and analyse site traffic. By clicking "Accept," you consent to our use of cookies. Read our
+          <a href="/privacy-policy" class="text-accent hover:text-accent-light underline">Privacy Policy</a>
+          for more information.
+        </p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <button
+          id="cookie-accept"
+          class="bg-accent hover:bg-accent-light text-white font-semibold px-5 py-2 rounded-lg transition-colors duration-200 text-sm"
+        >
+          Accept
+        </button>
+        <button
+          id="cookie-decline"
+          class="bg-gray-600 hover:bg-gray-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors duration-200 text-sm"
+        >
+          Decline
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+
+    var stored = localStorage.getItem('cookie_consent');
+    if (stored) return;
+
+    banner.classList.remove('hidden');
+
+    function setConsent(value) {
+      localStorage.setItem('cookie_consent', value);
+      banner.classList.add('hidden');
+    }
+
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', function () {
+      setConsent('declined');
+    });
+  })();
+</script>

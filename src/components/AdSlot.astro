@@ -1,0 +1,86 @@
+---
+interface Props {
+  slot: string;
+  format?: 'auto' | 'rectangle' | 'horizontal' | 'vertical' | 'fluid';
+  client?: string;
+  lazy?: boolean;
+  className?: string;
+  minHeight?: string;
+}
+
+const {
+  slot,
+  format = 'auto',
+  client = 'ca-pub-3974028728541243',
+  lazy = true,
+  className = '',
+  minHeight = '90px',
+} = Astro.props;
+
+const isPlaceholder = client === 'ca-pub-XXXXXXXXXXXXXXXX';
+const containerId = `adslot-${slot}`;
+---
+
+<div id={containerId} class={`ad-container ${className}`}>
+  {isPlaceholder ? (
+    <div
+      class="ad-placeholder flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-300 rounded text-gray-400 text-sm"
+      style={`min-height: ${minHeight}`}
+    >
+      <div class="text-center p-4">
+        <div class="font-medium">Ad Space</div>
+        <div class="text-xs mt-1">{slot} &middot; {format}</div>
+      </div>
+    </div>
+  ) : lazy ? (
+    <div
+      class="ad-lazy"
+      data-ad-client={client}
+      data-ad-slot={slot}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+      data-lazy="true"
+    ></div>
+  ) : (
+    <div>
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client={client}
+        data-ad-slot={slot}
+        data-ad-format={format}
+        data-full-width-responsive="true"
+      ></ins>
+      <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  )}
+</div>
+
+{!isPlaceholder && lazy && (
+  <script is:inline define:{{ adContainerId: containerId }}>
+    (function() {
+      var container = document.getElementById(adContainerId);
+      if (!container) return;
+      var lazyEl = container.querySelector('[data-lazy="true"]');
+      if (!lazyEl) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            var ins = document.createElement('ins');
+            ins.className = 'adsbygoogle';
+            ins.style.display = 'block';
+            ins.setAttribute('data-ad-client', lazyEl.getAttribute('data-ad-client'));
+            ins.setAttribute('data-ad-slot', lazyEl.getAttribute('data-ad-slot'));
+            ins.setAttribute('data-ad-format', lazyEl.getAttribute('data-ad-format'));
+            ins.setAttribute('data-full-width-responsive', 'true');
+            lazyEl.replaceWith(ins);
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      observer.observe(container);
+    })();
+  </script>
+)}
