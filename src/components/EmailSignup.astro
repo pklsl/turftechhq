@@ -16,6 +16,7 @@ const {
 } = Astro.props;
 
 const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || 'kit_c9479f8706aba6b9e2e8a9d2ef9407d0';
+const ckTagId = 18909247;
 const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
@@ -85,7 +86,7 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
   </div>
 )}
 
-<script define:vars={{ uid, ckApiKey }}>
+<script define:vars={{ uid, ckApiKey, ckTagId }}>
   (function () {
     var form = document.getElementById(uid);
     if (!form) return;
@@ -113,6 +114,13 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
         headers: { 'Content-Type': 'application/json', 'X-Kit-Api-Key': ckApiKey },
         body: JSON.stringify({ email_address: email }),
       })
+        .then(function () {
+          return fetch('https://api.kit.com/v4/tags/' + ckTagId + '/subscribers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Kit-Api-Key': ckApiKey },
+            body: JSON.stringify({ email_address: email }),
+          });
+        })
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data.subscriber) {
