@@ -201,8 +201,9 @@ const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data.subscriber) {
+            var downloadFilename = leadMagnetUrl ? leadMagnetUrl.split('/').pop() : '';
             var downloadHtml = leadMagnetUrl
-              ? '<a href="' + leadMagnetUrl + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;padding:10px 24px;background:var(--color-accent, #f59e0b);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Download Your ' + leadMagnetLabel + '</a>'
+              ? '<a href="#" class="lead-magnet-download-btn" style="display:inline-block;margin-top:12px;padding:10px 24px;background:var(--color-accent, #f59e0b);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Download Your ' + leadMagnetLabel + '</a>'
               : '';
             form.innerHTML =
               '<div class="text-center py-4">' +
@@ -210,6 +211,19 @@ const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
               '<p class="text-sm text-text-muted mb-3">Your ' + leadMagnetLabel + ' is ready.</p>' +
               downloadHtml +
               '</div>';
+            var dlBtn = form.querySelector('.lead-magnet-download-btn');
+            if (dlBtn) {
+              dlBtn.addEventListener('click', function(ev) {
+                ev.preventDefault();
+                var a = document.createElement('a');
+                a.href = leadMagnetUrl + '?response-content-disposition=attachment%3B%20filename%3D%22' + encodeURIComponent(downloadFilename) + '%22';
+                a.download = downloadFilename;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() { document.body.removeChild(a); }, 100);
+              });
+            }
           } else {
             btn.disabled = false;
             btn.textContent = origText;
