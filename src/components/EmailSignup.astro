@@ -17,6 +17,7 @@ const {
 
 const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || 'kit_c9479f8706aba6b9e2e8a9d2ef9407d0';
 const ckTagId = 18909247;
+const leadMagnetUrl = 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/lawn-care-seasonal-calendar.html';
 const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
@@ -86,7 +87,7 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
   </div>
 )}
 
-<script define:vars={{ uid, ckApiKey, ckTagId }}>
+<script define:vars={{ uid, ckApiKey, ckTagId, leadMagnetUrl, leadMagnet }}>
   (function () {
     var form = document.getElementById(uid);
     if (!form) return;

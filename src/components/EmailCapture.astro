@@ -3,8 +3,31 @@ interface Props {
   siteId: string;
   placementType: 'inline' | 'cta' | 'exit-intent';
   leadMagnetLabel?: string;
-  convertKitFormId?: string;
 }
+
+const SITE_TAG_IDS: Record<string, number> = {
+  thermaltechpro: 18909240,
+  flowcontrolhq: 18909241,
+  shinglescience: 18909242,
+  amperagehq: 18909243,
+  thepestpro: 18909244,
+  theweldersguide: 18909245,
+  ironworksinsider: 18909246,
+  turftechhq: 18909247,
+  thecarpentersguide: 18909248,
+};
+
+const LEAD_MAGNET_URLS: Record<string, string> = {
+  thermaltechpro: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/hvac-maintenance-checklist.html',
+  flowcontrolhq: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/plumbing-inspection-checklist.html',
+  shinglescience: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/roof-insurance-checklist.html',
+  amperagehq: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/electrical-safety-checklist.html',
+  thepestpro: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/termite-prevention-guide.html',
+  theweldersguide: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/welding-safety-checklist.html',
+  ironworksinsider: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/heavy-equipment-buyers-checklist.html',
+  turftechhq: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/lawn-care-seasonal-calendar.html',
+  thecarpentersguide: 'https://conduit-media-lead-magnets-660118042145.s3.us-east-1.amazonaws.com/woodworking-tool-checklist.html',
+};
 
 const {
   siteId,
@@ -13,6 +36,8 @@ const {
 } = Astro.props;
 
 const ckApiKey = import.meta.env.PUBLIC_CK_API_KEY || 'kit_c9479f8706aba6b9e2e8a9d2ef9407d0';
+const ckTagId = SITE_TAG_IDS[siteId] || 0;
+const leadMagnetUrl = LEAD_MAGNET_URLS[siteId] || '';
 const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
 ---
 
@@ -103,7 +128,7 @@ const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
   </div>
 )}
 
-<script define:vars={{ uid, ckApiKey, siteId, placementType }}>
+<script define:vars={{ uid, ckApiKey, ckTagId, placementType, leadMagnetUrl, leadMagnetLabel }}>
   (function () {
     var container = document.getElementById(uid);
     if (!container) return;
@@ -148,30 +173,48 @@ const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
 
       if (!email) return;
 
+      if (!ckApiKey || !ckTagId) {
+        console.warn('[EmailCapture] ConvertKit not configured.');
+        form.innerHTML = '<p class="text-sm text-center text-text-muted py-4">Email capture is not yet configured. Please check back soon!</p>';
+        return;
+      }
+
       btn.disabled = true;
       var origText = btn.textContent;
       btn.textContent = 'Subscribing\u2026';
 
-      var payload = { email_address: email };
-      if (firstName) payload.first_name = firstName;
+      var subscriberPayload = { email_address: email };
+      if (firstName) subscriberPayload.first_name = firstName;
 
       fetch('https://api.kit.com/v4/subscribers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-Kit-Api-Key': ckApiKey },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(subscriberPayload),
       })
+        .then(function () {
+          return fetch('https://api.kit.com/v4/tags/' + ckTagId + '/subscribers', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-Kit-Api-Key': ckApiKey },
+            body: JSON.stringify({ email_address: email, first_name: firstName || undefined }),
+          });
+        })
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data.subscriber) {
+            var downloadHtml = leadMagnetUrl
+              ? '<a href="' + leadMagnetUrl + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;padding:10px 24px;background:var(--color-accent, #f59e0b);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Download Your ' + leadMagnetLabel + '</a>'
+              : '';
             form.innerHTML =
               '<div class="text-center py-4">' +
               '<p class="text-lg font-semibold mb-1">You\'re subscribed!</p>' +
-              '<p class="text-sm text-text-muted">Thanks for signing up. We\'ll send you the best tips and guides.</p>' +
+              '<p class="text-sm text-text-muted mb-3">Your ' + leadMagnetLabel + ' is ready.</p>' +
+              downloadHtml +
               '</div>';
           } else {
             btn.disabled = false;
             btn.textContent = origText;
-            alert((data.errors && data.errors[0]) || 'Something went wrong. Please try again.');
+            var errMsg = (data.errors && data.errors[0]) || 'Something went wrong. Please try again.';
+            alert(errMsg);
           }
         })
         .catch(function () {
