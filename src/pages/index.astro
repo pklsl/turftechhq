@@ -22,9 +22,20 @@ const articles = (await getCollection('articles'))
   .slice(0, 3);
 
 const featuredArticle = articles[0];
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Turf Tech HQ',
+  url: Astro.site?.href,
+};
 ---
 
-<BaseLayout title="Home" description="Turf Tech HQ — Your trusted source for expert landscaping tips, lawn care guides, and garden solutions for homeowners and professionals.">
+<BaseLayout
+  title="Home"
+  description="Turf Tech HQ — Your trusted source for expert landscaping tips, lawn care guides, and garden solutions for homeowners and professionals."
+  structuredData={[websiteSchema]}
+>
   <section class="py-16 md:py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid lg:grid-cols-2 gap-12 items-center">

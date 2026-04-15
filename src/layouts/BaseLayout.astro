@@ -3,6 +3,7 @@ import '@/styles/global.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import CookieConsent from '@/components/CookieConsent.astro';
+import JsonLd from '@/components/JsonLd.astro';
 
 const ADSENSE_CLIENT = 'ca-pub-3974028728541243';
 
@@ -10,17 +11,49 @@ interface Props {
   title: string;
   description?: string;
   canonical?: string;
+  structuredData?: Record<string, unknown>[];
+  breadcrumbTitle?: string;
 }
 
 const {
   title,
   description = 'Turf Tech HQ — Expert landscaping tips, lawn care guides, and garden solutions for homeowners and professionals.',
   canonical,
+  structuredData = [],
+  breadcrumbTitle,
 } = Astro.props;
 
 const siteTitle = `${title} | Turf Tech HQ`;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 const adsenseEnabled = ADSENSE_CLIENT !== 'ca-pub-XXXXXXXXXXXXXXXX';
+
+const segments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+const breadcrumbItems: Array<{ '@type': string; position: number; name: string; item?: string }> = [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: Astro.site?.href },
+];
+
+let currentPath = '';
+for (let i = 0; i < segments.length; i++) {
+  currentPath += '/' + segments[i];
+  const isLast = i === segments.length - 1;
+  const rawName = segments[i].replace(/[-_]/g, ' ');
+  const name = isLast && breadcrumbTitle
+    ? breadcrumbTitle
+    : rawName.charAt(0).toUpperCase() + rawName.slice(1);
+  breadcrumbItems.push({
+    '@type': 'ListItem',
+    position: i + 2,
+    name,
+    ...(isLast ? {} : { item: new URL(currentPath, Astro.site).href }),
+  });
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems,
+};
+
 export { ADSENSE_CLIENT };
 ---
 
@@ -37,12 +70,14 @@ export { ADSENSE_CLIENT };
     <meta name="generator" content={Astro.generator} />
     <title>{siteTitle}</title>
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Turf Tech HQ" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
@@ -56,6 +91,8 @@ export { ADSENSE_CLIENT };
       ></script>
     )}
     <meta name="impact-site-verification" value="7e1e0aff-5619-4bf6-ad84-7471dcb50416">
+    <JsonLd data={breadcrumbSchema} />
+    {structuredData.map((schema) => <JsonLd data={schema} />)}
   </head>
   <body class="min-h-screen flex flex-col bg-surface text-text font-body">
     <Header />

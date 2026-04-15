@@ -28,9 +28,40 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
+
+const canonicalUrl = new URL(`/articles/${article.id}`, Astro.site).href;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.data.title,
+  description: article.data.description,
+  image: article.data.image,
+  datePublished: article.data.pubDate.toISOString(),
+  dateModified: (article.data.updatedDate || article.data.pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: article.data.author,
+    url: Astro.site?.href,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Turf Tech HQ',
+    url: Astro.site?.href,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+};
 ---
 
-<BaseLayout title={article.data.title} description={article.data.description}>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  structuredData={[articleSchema]}
+  breadcrumbTitle={article.data.title}
+>
   <article class="py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div class="mb-6">
