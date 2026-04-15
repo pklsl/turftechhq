@@ -215,13 +215,19 @@ const uid = `ec-${placementType}-${Math.random().toString(36).slice(2, 7)}`;
             if (dlBtn) {
               dlBtn.addEventListener('click', function(ev) {
                 ev.preventDefault();
-                var a = document.createElement('a');
-                a.href = leadMagnetUrl + '?response-content-disposition=attachment%3B%20filename%3D%22' + encodeURIComponent(downloadFilename) + '%22';
-                a.download = downloadFilename;
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                setTimeout(function() { document.body.removeChild(a); }, 100);
+                fetch(leadMagnetUrl)
+                  .then(function(r) { return r.blob(); })
+                  .then(function(blob) {
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = downloadFilename;
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 200);
+                  })
+                  .catch(function() { window.open(leadMagnetUrl, '_blank'); });
               });
             }
           } else {
