@@ -125,10 +125,14 @@ const uid = `email-signup-${variant}-${Math.random().toString(36).slice(2, 8)}`;
         .then(function (res) { return res.json(); })
         .then(function (data) {
           if (data.subscriber) {
+            var downloadHtml = leadMagnetUrl
+              ? '<a href="' + leadMagnetUrl + '" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;padding:10px 24px;background:#f59e0b;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">Download Your ' + leadMagnet + '</a>'
+              : '';
             actualForm.innerHTML =
               '<div class="text-center">' +
               '<p class="text-lg font-semibold mb-2">You\'re subscribed!</p>' +
-              '<p class="text-sm">Thanks for signing up. We\'ll send you the best tips and guides.</p>' +
+              '<p class="text-sm mb-3">Your ' + leadMagnet + ' is ready.</p>' +
+              downloadHtml +
               '</div>';
           } else {
             btn.disabled = false;
