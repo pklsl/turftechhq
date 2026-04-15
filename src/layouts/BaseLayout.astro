@@ -13,6 +13,7 @@ interface Props {
   canonical?: string;
   structuredData?: Record<string, unknown>[];
   breadcrumbTitle?: string;
+  image?: string;
 }
 
 const {
@@ -21,10 +22,12 @@ const {
   canonical,
   structuredData = [],
   breadcrumbTitle,
+  image,
 } = Astro.props;
 
 const siteTitle = `${title} | Turf Tech HQ`;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
+const ogImageUrl = image || new URL('/og-default.png', Astro.site).href;
 const adsenseEnabled = ADSENSE_CLIENT !== 'ca-pub-XXXXXXXXXXXXXXXX';
 
 const segments = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
@@ -76,11 +79,13 @@ export { ADSENSE_CLIENT };
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="Turf Tech HQ" />
+    <meta property="og:image" content={ogImageUrl} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     {adsenseEnabled && (
       <script
