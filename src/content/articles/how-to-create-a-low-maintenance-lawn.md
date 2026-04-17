@@ -5,7 +5,7 @@ pubDate: 2026-04-14
 updatedDate: 2026-04-14
 author: "Chris VanDoren"
 tags: ["lawn care", "low maintenance", "grass", "irrigation", "seasonal"]
-image: "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 A lush, green lawn is the centerpiece of most yards — but it shouldn't consume your weekends. The secret to a low-maintenance lawn isn't neglect; it's making smart choices up front about grass type, soil health, watering, and mowing habits that reduce the amount of ongoing work your lawn demands.
