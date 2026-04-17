@@ -40,9 +40,10 @@ const articleSchema = {
   datePublished: article.data.pubDate.toISOString(),
   dateModified: (article.data.updatedDate || article.data.pubDate).toISOString(),
   author: {
-    '@type': 'Organization',
+    '@type': 'Person',
     name: article.data.author,
     url: Astro.site?.href,
+    image: '/author.jpg',
   },
   publisher: {
     '@type': 'Organization',
@@ -124,6 +125,17 @@ const articleSchema = {
           />
           <div class="mt-6">
             <AffiliateDisclosure variant="full" />
+          </div>
+          <div class="mt-8 p-6 bg-gray-50 rounded-2xl flex items-center gap-4">
+            <img
+              src="/author.jpg"
+              alt={article.data.author}
+              class="w-12 h-12 rounded-full object-cover flex-shrink-0"
+            />
+            <div>
+              <p class="font-semibold text-gray-900">{article.data.author}</p>
+              <p class="text-sm text-text-muted">Landscape Professional & Founder of Turf Tech HQ</p>
+            </div>
           </div>
           <div class="mt-12 pt-8 border-t border-gray-200">
             <a href="/articles" class="text-primary hover:text-primary-dark font-medium">

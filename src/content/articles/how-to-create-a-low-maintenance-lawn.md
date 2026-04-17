@@ -3,7 +3,7 @@ title: "How to Create a Low-Maintenance Lawn"
 description: "A comprehensive guide to designing, planting, and maintaining a beautiful lawn that requires minimal effort — covering grass selection, smart irrigation, mowing strategies, and weed prevention."
 pubDate: 2026-04-14
 updatedDate: 2026-04-14
-author: "Turf Tech HQ Team"
+author: "Chris VanDoren"
 tags: ["lawn care", "low maintenance", "grass", "irrigation", "seasonal"]
 image: "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
