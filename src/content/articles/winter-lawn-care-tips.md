@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["seasonal lawn care", "winter", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/30209377/pexels-photo-30209377.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 For most homeowners, lawn care is a warm-weather activity. Once the grass stops growing and the temperatures drop, the mower goes into storage and the lawn is largely forgotten until spring. And for the most part, that's fine — **lawns are remarkably resilient**, and most will come back strong in spring with little winter intervention.

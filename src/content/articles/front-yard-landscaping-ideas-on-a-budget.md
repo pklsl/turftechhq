@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["landscaping ideas", "front yard", "budget landscaping"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/18559625/pexels-photo-18559625.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You don't need a $10,000 landscaping contract to have the best-looking house on your street. Some of the most dramatic curb appeal transformations cost less than $200 and a weekend of work.

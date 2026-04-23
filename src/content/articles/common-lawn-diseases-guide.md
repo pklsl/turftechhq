@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn diseases", "lawn fungus", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/35062498/pexels-photo-35062498.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Your lawn looked perfect two weeks ago. Now there are strange patches, discolored rings, powdery coatings, or dead spots spreading in ways that don't make sense. Before you reach for any product, you need an accurate diagnosis — because treating the wrong disease is at best a waste of money and at worst harmful to your turf.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["weed control", "pre-emergent", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/12247010/pexels-photo-12247010.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Every year, thousands of homeowners apply pre-emergent herbicide too late, too early, or at the wrong rate — and then wonder why their lawn is overrun with crabgrass and annual weeds by July. **Pre-emergent herbicides are one of the most powerful tools in lawn weed management**, but they only work when applied correctly. Miss the window by a week or two, and you might as well have skipped the treatment entirely.

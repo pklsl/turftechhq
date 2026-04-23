@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["weed identification", "weed control", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/31764747/pexels-photo-31764747.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You're walking your lawn and notice something that doesn't belong. Is it crabgrass or quackgrass? Clover or oxalis? Ground ivy or creeping Charlie? (Spoiler: those last two are the same weed — but more on that later.) **Correct weed identification is the first and most important step in effective weed control**, because the wrong herbicide won't kill the weed and might harm your grass.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["soil health", "lawn care", "soil pH"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/33995853/pexels-photo-33995853.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Most homeowners obsess over fertilizer, watering schedules, and mowing height — but completely ignore the one factor that determines whether any of that effort actually pays off: **soil pH**. If your soil pH is off, your grass can't absorb nutrients no matter how much fertilizer you apply. The nutrients are there — they're just locked in a chemical form your lawn can't use.

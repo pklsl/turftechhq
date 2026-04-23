@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["equipment reviews", "riding mower", "lawn mowers"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/9229827/pexels-photo-9229827.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Once your lawn gets to an acre or more, a walk-behind mower stops being a practical option. You need a riding mower — but the choices are overwhelming. Lawn tractors, zero-turn mowers, garden tractors — they all look similar in the store but perform very differently in real conditions.

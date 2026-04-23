@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn care", "dethatching", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/11400234/pexels-photo-11400234.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 There's a hidden problem lurking in many healthy-looking lawns — a dense mat of dead and living organic material sitting between the green grass blades and the soil beneath. It's called **thatch**, and when it builds up too thick, it quietly sabotages everything you do to care for your lawn. Water can't penetrate it. Fertilizer sits on top of it. Roots grow into it instead of into the soil. And pests and diseases find it to be an ideal home.

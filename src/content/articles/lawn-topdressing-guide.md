@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["soil health", "lawn care", "lawn renovation"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/12940879/pexels-photo-12940879.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Golf course superintendents have used it for decades. Now homeowners are catching on. **Lawn topdressing** — the practice of spreading a thin layer of material over your existing turf — is one of the most powerful (and underused) techniques for building a thick, healthy, resilient lawn from the ground up.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["tree care", "shrub care", "pruning"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/31296071/pexels-photo-31296071.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Pruning is one of the most powerful tools in a homeowner's landscaping arsenal — and one of the most misunderstood. Done correctly, it improves plant health, enhances shape, boosts flowering, and keeps your property safe. Done poorly, it can disfigure plants for years or even kill them.

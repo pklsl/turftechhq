@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn diseases", "brown patch", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/19068834/pexels-photo-19068834.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You step outside on a hot July morning, coffee in hand, and something is wrong. Your once-lush lawn is covered in brown, circular patches that weren't there last week. By the time you recognize what you're dealing with, the damage is already spreading. **Brown patch lawn disease** is one of the most destructive fungal diseases in the United States — and it moves fast.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["irrigation", "sprinkler system", "DIY landscaping"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/35090073/pexels-photo-35090073.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 A healthy lawn doesn't happen by accident — it happens because someone figured out how to get the right amount of water to the right places at the right time. Installing your own sprinkler system is one of the most impactful DIY projects you can tackle, and it pays off every single season.

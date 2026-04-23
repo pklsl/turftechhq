@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn care", "aeration", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 If your lawn looks thin, feels rock-hard underfoot, drains poorly after rain, or just seems to resist every attempt at improvement — compaction is likely your biggest problem. And the most effective solution is one that most homeowners overlook entirely: **lawn aeration**.

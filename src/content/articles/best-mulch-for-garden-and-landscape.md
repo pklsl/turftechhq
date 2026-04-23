@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["mulch", "landscaping", "garden care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/16702039/pexels-photo-16702039.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 If there's one landscaping practice that delivers the most return on the least investment, it's mulching. A properly mulched bed can cut watering frequency in half, nearly eliminate weeding, protect plant roots from temperature extremes, and slowly build the kind of rich, living soil that plants thrive in.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn diseases", "dollar spot", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/1001676/pexels-photo-1001676.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 It starts innocuously — small, straw-colored spots scattered across your lawn, each about the size of a silver dollar. You might assume it's dry spots, or perhaps some chemical burn. But within a week, those spots multiply and begin to merge, and what was a few isolated patches becomes a lawn riddled with dead, bleached areas that no amount of watering seems to fix.

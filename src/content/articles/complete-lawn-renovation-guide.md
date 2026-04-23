@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn renovation", "lawn care", "lawn repair"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/6728925/pexels-photo-6728925.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You've stared at the patchy, weed-choked mess in your yard long enough. Maybe it's been a slow decline over a few seasons, or maybe you bought a house with a lawn that was already a disaster. Either way, you've reached the point where you know something has to change — but where do you actually start?

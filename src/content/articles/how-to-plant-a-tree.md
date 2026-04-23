@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["tree care", "planting guide", "landscaping"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/35744764/pexels-photo-35744764.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Planting a tree is one of the most lasting investments you can make in your property. A well-placed, properly planted tree will provide shade, beauty, wildlife habitat, and real estate value for decades — potentially for your entire lifetime and beyond.

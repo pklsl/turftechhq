@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["pest control", "armyworms", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/32151816/pexels-photo-32151816.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 One evening your lawn looks perfectly normal. By the next morning, there's a swath of brown, ragged grass that looks like it was scalped or burned overnight. No storm, no drought, nothing changed — except that tens of thousands of armyworm caterpillars spent the night marching through your turf, eating everything in their path.

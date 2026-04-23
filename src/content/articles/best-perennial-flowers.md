@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["perennial flowers", "gardening", "landscaping"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/6744435/pexels-photo-6744435.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Here's the thing about perennials that most gardening guides undersell: they don't just come back every year — they get **better** every year. A hosta planted in 2024 becomes a dramatic clump by 2028. A stand of coneflowers planted along a fence fills in, self-seeds, and eventually creates the kind of naturalistic planting that looks like it's always been there.

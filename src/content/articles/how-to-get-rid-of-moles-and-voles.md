@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["pest control", "moles", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/88512/pexels-photo-88512.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You step out to mow your lawn and suddenly you're navigating a minefield of raised ridges, soft squishy tunnels, and mysterious mounds of dirt. Or maybe you went to pull a perennial in your garden and the roots just crumbled away — the plant hollowed out from below. Either way, something is living in your yard, eating your landscaping from the underground up, and it's time to do something about it.

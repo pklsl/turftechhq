@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["weed control", "crabgrass", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/12002897/pexels-photo-12002897.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 If you've ever watched a thick, healthy lawn slowly get taken over by coarse, spreading clumps of grassy weeds, you already know how frustrating crabgrass can be. It shows up uninvited every summer, spreads aggressively, and dies off in the fall — leaving behind bare, ugly patches that invite even more weeds the following year. The good news: **crabgrass is one of the most controllable weeds in the lawn care world**, as long as you understand how it works and attack it at the right time.

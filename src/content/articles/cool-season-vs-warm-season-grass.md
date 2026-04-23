@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["grass types", "cool-season grass", "warm-season grass"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/1587548/pexels-photo-1587548.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Walk through a neighborhood in Ohio in July and most lawns look great. Drive through the same neighborhood in January and every lawn is dormant but green. Now drive through a neighborhood in Georgia in that same July — lush, dark green, and vigorous. Check back in February and those Georgia lawns are completely brown.

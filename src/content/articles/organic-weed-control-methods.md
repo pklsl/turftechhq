@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["organic", "weed control", "natural lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/17933004/pexels-photo-17933004.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 The phrase "organic weed control" gets thrown around a lot — but let's be honest: most of the advice out there ranges from mildly helpful to completely ineffective. Sprinkling salt on weeds? It'll sterilize your soil for years. Pouring undiluted white vinegar on your lawn? You'll burn everything in a 6-inch radius and wonder why your grass died too.

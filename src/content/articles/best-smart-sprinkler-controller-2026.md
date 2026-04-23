@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["irrigation", "smart home", "product reviews"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/35090073/pexels-photo-35090073.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Watering your lawn on a timer you set three years ago and haven't touched since isn't smart irrigation — it's wishful thinking. A traditional timer runs whether it rained all morning or not, whether the temperature is 55°F or 95°F, whether your soil is saturated or bone dry.

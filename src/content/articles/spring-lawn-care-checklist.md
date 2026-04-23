@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["seasonal lawn care", "spring", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/37122563/pexels-photo-37122563.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Spring is the most important season to get your lawn care right. The decisions and actions you take in those first few weeks of the growing season set the trajectory for your lawn's health all the way through fall. Skip a key step or do things out of order and you'll be playing catch-up all summer.

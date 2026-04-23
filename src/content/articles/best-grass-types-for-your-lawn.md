@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["grass types", "lawn planning", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/1587548/pexels-photo-1587548.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Most lawn problems aren't caused by poor fertilizing or incorrect watering — they're caused by growing the wrong type of grass for the climate, soil, or use conditions. A beautiful Kentucky bluegrass lawn in Minnesota is perfectly achievable. That same Kentucky bluegrass planted in Georgia will be a perpetual, expensive disappointment.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["sod", "lawn installation", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/5231236/pexels-photo-5231236.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 There are few things more satisfying in the landscape world than watching a bare patch of dirt transform into a lush, green lawn in a single afternoon. That's the promise of sod — and when installed correctly, it delivers. You get an instant lawn, virtually no weed pressure in those first critical weeks, and a head start on establishment that seed can't match.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["seasonal lawn care", "fall", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/35629980/pexels-photo-35629980.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Ask any turf professional which season is most important for lawn care, and the answer is almost always the same: **fall**. Not spring.

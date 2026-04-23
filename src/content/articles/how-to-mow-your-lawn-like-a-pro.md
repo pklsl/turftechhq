@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn care", "mowing", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/6728919/pexels-photo-6728919.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You've seen those lawns — the ones with perfect stripes, uniform height, and a deep, rich green color that practically glows in the afternoon sun. They don't happen by accident. Behind every great-looking lawn is a mowing routine built on a handful of core principles that most homeowners never learn.

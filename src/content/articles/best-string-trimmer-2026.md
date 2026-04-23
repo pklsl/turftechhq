@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["equipment reviews", "string trimmer", "lawn tools"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/28176044/pexels-photo-28176044.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 A string trimmer — or "weed eater," as most people call it — might be the hardest-working tool in your lawn care arsenal. It does the detail work that makes the difference between a lawn that looks mowed and one that looks groomed: tight edges along fences, clean borders around beds, trimming under obstacles the mower can't reach.

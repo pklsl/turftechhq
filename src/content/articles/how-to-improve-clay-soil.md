@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["soil health", "clay soil", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/29555030/pexels-photo-29555030.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Clay soil has a reputation — and not a good one. It gets waterlogged in spring, bakes into concrete in summer, and compacts under foot traffic until grass roots simply can't penetrate it. If you've got clay, you know the frustration: you fertilize, you water, you seed — and your lawn still looks thin and stressed while your neighbor's (apparently identical) lawn looks lush.

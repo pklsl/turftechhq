@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn care", "fertilizer", "lawn maintenance"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/14169970/pexels-photo-14169970.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Walk into any garden center and you'll find an overwhelming wall of fertilizer bags — each one promising the greenest lawn on the block. But buying the wrong product, applying it at the wrong time, or putting down too much can do more harm than a bag of fertilizer can fix. Lawn burn, nutrient runoff, wasted money, and turf damage are all common outcomes of a poorly planned fertilizing approach.

@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["overseeding", "lawn renovation", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/1001676/pexels-photo-1001676.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 If your lawn is starting to look thin, patchy, or faded — or if it's been several years since you've done anything to renovate the turf — overseeding is one of the highest-return investments you can make in your lawn. It costs a fraction of re-sodding, doesn't require killing the existing lawn, and when done correctly, delivers visible thickening and greening within 3–4 weeks.

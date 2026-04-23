@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["irrigation", "drip irrigation", "water conservation"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/10606633/pexels-photo-10606633.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Overhead sprinklers are efficient for turf, but they're the wrong tool for planting beds, shrubs, trees, and vegetable gardens. Water sprayed overhead wets foliage (inviting fungal disease), evaporates before it reaches the root zone, and lands everywhere except where plants actually need it — the soil around the roots.

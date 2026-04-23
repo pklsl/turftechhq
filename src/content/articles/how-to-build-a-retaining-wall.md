@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["landscaping", "retaining wall", "DIY landscaping"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/29062647/pexels-photo-29062647.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 A slope in your yard can be beautiful — or it can be a maintenance nightmare that erodes every time it rains and makes half your property unusable. A well-built retaining wall solves both problems. It stops erosion, creates level planting beds and usable lawn areas, and adds significant visual structure to your landscape.

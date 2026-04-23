@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["lawn care", "irrigation", "water conservation"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/14823388/pexels-photo-14823388.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 Watering seems like the simplest part of lawn care — turn on the sprinkler and walk away. But improper watering is one of the top reasons lawns thin out, develop disease, grow shallow roots, and eventually fail. Water too little and grass desiccates. Water too much and you invite fungal disease, root rot, pest problems, and wasted money on your utility bill.

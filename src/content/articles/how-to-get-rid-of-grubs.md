@@ -5,7 +5,7 @@ pubDate: 2026-04-21
 updatedDate: 2026-04-21
 author: "Chris VanDoren"
 tags: ["pest control", "lawn grubs", "lawn care"]
-image: "https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=800"
+image: "https://images.pexels.com/photos/4386496/pexels-photo-4386496.jpeg?auto=compress&cs=tinysrgb&w=800"
 ---
 
 You wake up one morning and notice a patch of your lawn has turned brown overnight. You walk over to investigate, grab a handful of the dead turf, and the whole thing peels back like a piece of carpet — no roots holding it to the soil at all. That's a grub problem, and if you haven't dealt with it before, it can feel like your lawn just disappeared beneath you.
