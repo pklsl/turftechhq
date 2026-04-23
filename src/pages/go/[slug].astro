@@ -12,5 +12,5 @@ if (!product) {
   return Astro.redirect('/articles');
 }
 
-return Astro.redirect(getAffiliateUrl(product.asin), 302);
+return Astro.redirect(getAffiliateUrl(product.asin, product.title), 302);
 ---

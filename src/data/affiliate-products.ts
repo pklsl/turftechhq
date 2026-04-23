@@ -12,7 +12,10 @@ export interface Product {
 
 export const AMAZON_TAG = 'turftechhq-20';
 
-export function getAffiliateUrl(asin: string): string {
+export function getAffiliateUrl(asin: string, title?: string): string {
+  if (title) {
+    return `https://www.amazon.com/s?k=${encodeURIComponent(title)}&tag=${AMAZON_TAG}`;
+  }
   return `https://www.amazon.com/dp/${asin}/?tag=${AMAZON_TAG}`;
 }
 
