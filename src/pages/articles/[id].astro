@@ -3,20 +3,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import AdSlot from '@/components/AdSlot.astro';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure.astro';
 import EmailCapture from '@/components/EmailCapture.astro';
-import LeadGenForm from '@/components/LeadGenForm.astro';
 import ProductRecommendations from '@/components/ProductRecommendations.astro';
 import { getCollection, render } from 'astro:content';
-
-const LANDSCAPING_SERVICES = [
-  'Lawn Mowing & Maintenance',
-  'Lawn Installation / Seeding',
-  'Landscape Design',
-  'Garden Bed Installation',
-  'Tree & Shrub Trimming',
-  'Irrigation / Sprinkler System',
-  'Sod Installation',
-  'Other Landscaping Service',
-];
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
@@ -109,20 +97,6 @@ const articleSchema = {
           <div class="mt-8">
             <AdSlot slot="article-in-content-1" format="horizontal" lazy={true} minHeight="90px" />
           </div>
-          <div class="mt-4">
-            <AdSlot slot="article-in-content-2" format="horizontal" lazy={true} minHeight="90px" />
-          </div>
-          <EmailCapture
-            siteId="turftechhq"
-            placementType="cta"
-            leadMagnetLabel="Seasonal Lawn Care Checklist"
-          />
-          <LeadGenForm
-            siteId="turftechhq"
-            serviceTypes={LANDSCAPING_SERVICES}
-            heading="Need a Landscaper? Get a Free Estimate"
-            subheading="Connect with a local landscaping professional — no obligation."
-          />
           <div class="mt-6">
             <AffiliateDisclosure variant="full" />
           </div>
