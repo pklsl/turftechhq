@@ -1,20 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import AdSlot from '@/components/AdSlot.astro';
 import EmailSignup from '@/components/EmailSignup.astro';
-import LeadGenForm from '@/components/LeadGenForm.astro';
 import { getCollection } from 'astro:content';
-
-const LANDSCAPING_SERVICES = [
-  'Lawn Mowing & Maintenance',
-  'Lawn Installation / Seeding',
-  'Landscape Design',
-  'Garden Bed Installation',
-  'Tree & Shrub Trimming',
-  'Irrigation / Sprinkler System',
-  'Sod Installation',
-  'Other Landscaping Service',
-];
 
 const DEFAULT_IMAGE = "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=800";
 const articles = (await getCollection('articles'))
@@ -69,10 +56,6 @@ const websiteSchema = {
     </div>
   </section>
 
-  <div class="max-w-6xl mx-auto px-4 py-4">
-    <AdSlot slot="home-in-content-1" format="horizontal" lazy={true} minHeight="90px" />
-  </div>
-
   {articles.length > 0 && (
     <section class="py-16 bg-surface">
       <div class="max-w-6xl mx-auto px-4">
@@ -117,10 +100,6 @@ const websiteSchema = {
       </div>
     </section>
   )}
-
-  <div class="max-w-6xl mx-auto px-4 py-4">
-    <AdSlot slot="home-in-content-2" format="horizontal" lazy={true} minHeight="90px" />
-  </div>
 
   <section class="py-16 bg-surface">
     <div class="max-w-2xl mx-auto px-4">

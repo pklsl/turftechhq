@@ -1,12 +1,10 @@
 ---
-import AdSlot from '@/components/AdSlot.astro';
 import EmailSignup from './EmailSignup.astro';
 const year = new Date().getFullYear();
 ---
 
 <footer class="bg-surface-dark text-white py-8 mt-12">
   <div class="max-w-6xl mx-auto px-4">
-    <AdSlot slot="footer" format="horizontal" lazy={true} className="mb-8" minHeight="90px" />
     <div class="grid md:grid-cols-4 gap-8">
       <div>
         <h3 class="text-accent font-bold text-lg mb-2">Turf Tech HQ</h3>
@@ -27,7 +25,6 @@ const year = new Date().getFullYear();
         <ul class="space-y-1 text-sm text-gray-400">
           <li><a href="/privacy-policy" class="hover:text-accent">Privacy Policy</a></li>
           <li><a href="/terms-of-service" class="hover:text-accent">Terms of Service</a></li>
-          <li><a href="/affiliate-disclosure" class="hover:text-accent">Affiliate Disclosure</a></li>
         </ul>
       </div>
       <div>
@@ -35,13 +32,6 @@ const year = new Date().getFullYear();
         <p class="text-sm text-gray-400 mb-3">Get our essential seasonal lawn care checklist.</p>
         <EmailSignup source="footer" variant="compact" />
       </div>
-    </div>
-    <div class="border-t border-gray-700 mt-8 pt-6">
-      <p class="text-xs text-gray-500 text-center">
-        Turf Tech HQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program
-        designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
-        As an Amazon Associate, we earn from qualifying purchases. Prices and availability are subject to change.
-      </p>
     </div>
     <div class="border-t border-gray-700 mt-4 pt-4 text-center text-sm text-gray-500">
       &copy; {year} Turf Tech HQ. All rights reserved.

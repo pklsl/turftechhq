@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import AdSlot from '@/components/AdSlot.astro';
-import AffiliateDisclosure from '@/components/AffiliateDisclosure.astro';
-import EmailCapture from '@/components/EmailCapture.astro';
-import ProductRecommendations from '@/components/ProductRecommendations.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -54,9 +51,6 @@ const articleSchema = {
 >
   <article class="py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="mb-6">
-        <AffiliateDisclosure variant="compact" />
-      </div>
       <div class="flex flex-col lg:flex-row gap-8">
         <div class="flex-1 min-w-0">
           <div class="mb-8">
@@ -86,20 +80,6 @@ const articleSchema = {
           <div class="prose prose-lg max-w-none">
             <Content />
           </div>
-          <EmailCapture
-            siteId="turftechhq"
-            placementType="inline"
-            leadMagnetLabel="Seasonal Lawn Care Checklist"
-          />
-          <div class="mt-8">
-            <ProductRecommendations maxItems={1} title="Recommended Product" />
-          </div>
-          <div class="mt-8">
-            <AdSlot slot="article-in-content-1" format="horizontal" lazy={true} minHeight="90px" />
-          </div>
-          <div class="mt-6">
-            <AffiliateDisclosure variant="full" />
-          </div>
           <div class="mt-8 p-6 bg-gray-50 rounded-2xl flex items-center gap-4">
             <img
               src="/author.jpg"
@@ -125,9 +105,4 @@ const articleSchema = {
       </div>
     </div>
   </article>
-  <EmailCapture
-    siteId="turftechhq"
-    placementType="exit-intent"
-    leadMagnetLabel="Seasonal Lawn Care Checklist"
-  />
 </BaseLayout>
